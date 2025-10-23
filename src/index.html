@@ -1,36 +1,136 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Исторические даты</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
     <div class="historical-timeline" id="timeline-1">
-        <div class="timeline-container">
-            <h2 class="timeline-title">Исторические даты</h2>
-            <div class="timeline-controls">
-                <div class="timeline-circle">
-                    <!-- Точки будут через JS -->
-                </div>
-                <div class="timeline-dates">
-                    <span class="date-start">1985</span>
-                    <span class="date-end">1991</span>
-                </div>
+      <div class="timeline-container">
+        <!-- Заголовок слева -->
+        <h2 class="timeline-title">Исторические даты</h2>
+
+        <!-- Центральный круг -->
+        <div class="timeline-circle-container">
+          <!-- Линии крестика -->
+          <div class="cross-line horizontal-line"></div>
+          <div class="cross-line vertical-line"></div>
+
+          <!-- Сам круг с точками -->
+          <div class="timeline-circle">
+            <!-- 6 точек равномерно по кругу -->
+            <div
+              class="timeline-point active"
+              data-period="1"
+              style="top: 0%; left: 50%"
+            >
+              <span class="point-label">Кино</span>
             </div>
-            <div class="timeline-events">
-                <div class="swiper events-slider">
-                    <div class="swiper-wrapper">
-                        <!-- Слайды через JS -->
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+            <div
+              class="timeline-point"
+              data-period="2"
+              style="top: 25%; left: 93%"
+            >
+              <span class="point-label">Технологии</span>
             </div>
+            <div
+              class="timeline-point"
+              data-period="3"
+              style="top: 75%; left: 93%"
+            >
+              <span class="point-label">Наука</span>
+            </div>
+            <div
+              class="timeline-point"
+              data-period="4"
+              style="top: 100%; left: 50%"
+            >
+              <span class="point-label">Литература</span>
+            </div>
+            <div
+              class="timeline-point"
+              data-period="5"
+              style="top: 75%; left: 7%"
+            >
+              <span class="point-label">Музыка</span>
+            </div>
+            <div
+              class="timeline-point"
+              data-period="6"
+              style="top: 25%; left: 7%"
+            >
+              <span class="point-label">Искусство</span>
+            </div>
+          </div>
+
+          <!-- Цифры периодов -->
+          <div class="period-dates">
+            <span class="date-start">1985</span>
+            <span class="date-end">1991</span>
+          </div>
         </div>
+      </div>
+
+      <!-- ФИКСИРОВАННЫЙ блок снизу: слайдер на всю ширину -->
+      <div class="timeline-bottom">
+        <div class="timeline-bottom-content">
+          <!-- Контролы абсолютно позиционированы над слайдером -->
+          <div class="timeline-controls">
+            <div class="period-counter">
+              <span class="current-period">1</span>/<span class="total-periods"
+                >6</span
+              >
+            </div>
+            <div class="nav-buttons">
+              <button class="nav-button prev-button">←</button>
+              <button class="nav-button next-button">→</button>
+            </div>
+          </div>
+
+          <!-- Слайдер событий на всю ширину -->
+          <div class="timeline-slider-container">
+            <div class="swiper timeline-slider">
+              <div class="swiper-wrapper">
+                <!-- Тестовые слайды для периода 1 (Кино) -->
+                <div class="swiper-slide">
+                  <div class="event-slide">
+                    <div class="event-year">1985</div>
+                    <div class="event-description">
+                      Назад в будущее - культовый фильм о путешествиях во
+                      времени
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="event-slide">
+                    <div class="event-year">1987</div>
+                    <div class="event-description">
+                      Хищник - знаменитый боевик с Арнольдом Шварценеггером
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="event-slide">
+                    <div class="event-year">1990</div>
+                    <div class="event-description">
+                      Крепкий орелок - эталон жанра экшн
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Пагинация слайдера -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</body>
+  </body>
 </html>
